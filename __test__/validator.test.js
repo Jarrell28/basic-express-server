@@ -7,6 +7,7 @@ const mockRequest = supertest(server);
 describe('validator middleware', () => {
 
     let consoleSpy;
+    //Must fill in param data for the mock test
     let req = {
         query: {
             name: "jarrell"

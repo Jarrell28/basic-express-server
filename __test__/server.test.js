@@ -22,7 +22,7 @@ describe('WEB SERVER:', () => {
     const response = await mockRequest.get('/hello');
     expect(response.status).toBe(200); // test for status code
     // HINT: test for shape/type of data
-    expect(typeof response.text).toBe('string'); // test your output
+    expect(typeof response.text).toEqual('string'); // test your output
   });
 
   it('should respond properly to a GET: /person with name parameter', async () => {
