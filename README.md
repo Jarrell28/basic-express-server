@@ -2,7 +2,9 @@
 
 ## Author - Jarrell Houston
 
-## Deploy link - (https://jarrell-basic-express-server.herokuapp.com/)[https://jarrell-basic-express-server.herokuapp.com/]
+## Deploy link  
+
+https://jarrell-basic-express-server.herokuapp.com/
 
 ## SETUP
 
