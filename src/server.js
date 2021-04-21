@@ -17,47 +17,8 @@ app.use(express.json());
 // - custom 500 and 404 error handling middleware
 app.use(logger);
 
-// GET http://localhost:3333?name=brian&cool=fun
-app.get('/hello', (req, res) => {
-  console.log(req.query); // { name: 'brian', cool: 'fun'}
-  res.send('hello world!');
-});
 
-// GET http://localhost:3333/hello/brian
-app.get('/hello/:person', (req, res) => {
-  console.log('name:', req.params.person);
-  res.send({ name: req.params.person });
-})
-
-// http://localhost:33333/hello/a/b
-app.get('/hello/:person/:another', (req, res) => {
-  console.log('params', req.params);
-  res.send(req.params)
-});
-
-app.get('/cool', logger, square(5), (req, res) => {
-  console.log(req.squared);
-  res.json({ num: req.squared })
-});
-
-app.post('/test-post', (req, res) => {
-  console.log(req.body);
-  res.send('great, cool');
-})
-
-// function currying
-function square(n) {
-  return (req, res, next) => {
-    if (typeof n !== 'number') {
-      next('not a number!');
-    } else {
-      req.squared = n * n;
-      next();
-    }
-  }
-}
-
-// My routes
+// routes
 app.get('/person', validator, (req, res) => {
   res.json(req.query);
 })
